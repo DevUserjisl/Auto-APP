@@ -5,9 +5,13 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    def tag = "${params.TAGS}"
-                    echo "Ejecutando con tag: ${tag}"
-                    bat "mvn clean verify -Dcucumber.filter.tags=${tag}"
+                    def tag = params.TAGS
+                    def platform = params.PLATFORM
+
+                    echo "Tag: ${tag}"
+                    echo "Platform: ${platform}"
+
+                    bat "mvn clean verify -Dcucumber.filter.tags=\"${tag}\" -Dplatform=${platform}"
                 }
             }
         }
