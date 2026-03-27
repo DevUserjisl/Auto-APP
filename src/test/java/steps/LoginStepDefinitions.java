@@ -12,7 +12,7 @@ public class LoginStepDefinitions {
     }
 
     @Cuando("digito mi usuario y contraseña")
-    public void digitoMiUsuarioYContraseña() {
+    public void digitoMiUsuarioYContrasena() {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
